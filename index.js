@@ -1,27 +1,21 @@
 // Write your solution in this file!
 const driver = {};
 
-function updateDriverWithKeyAndValue(driver, key, value) {
-    return Object.assign({}, driver, { [key]: value }); 
-    // const updateDriver = Object.assign({}, driver)
-    // updateDriver[key] = value
-    // return updateDriver
-}
+const updateDriverWithKeyAndValue = (driver, key, value) => {
+    return Object.assign({}, driver, {[key]: value})
+};
 
-function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
-    // return Object.assign(driver, {[key]: value });
-    driver[key] = value
-    return driver
-}
+const destructivelyUpdateDriverWithKeyAndValue = (driver, key, value) => {
+    return Object.assign(driver, {[key]: value})
+};
 
-function deleteFromDriverByKey(driver, key) {
-    const cloneOfDriver = Object.assign({}, driver);
-    delete cloneOfDriver[key];
-    return cloneOfDriver;
+const deleteFromDriverByKey = (driver, key) => {
+    const newObj = Object.assign({}, driver)
+    delete newObj[key]
+    return newObj
+};
 
-}
-
-function destructivelyDeleteFromDriverByKey(driver, key) {
-    delete driver[key];
+const destructivelyDeleteFromDriverByKey = (driver, key) => {
+    delete driver[key]
     return driver
 }
